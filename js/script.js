@@ -52,6 +52,44 @@
 
     });
 
+    //modal
+    const buttons = document.querySelectorAll("button"),
+          closemodal = document.querySelector(".modal_window_close"),
+          mailingbutton=  document.querySelector(".modal_window_inputbutton"),
+          mailingmodal = document.querySelector(".modal_mailing"),
+          modal = document.querySelector(".modal"),
+          modalwindow = document.querySelector(".modal_window"),
+          modalmailingtitle = document.querySelector(".modal_mailing_title"),
+          thank = "Ваше сообщение отправлено";
+    
+    function showmodal(item1){
+        item1.classList.remove("hide");
+        item1.classList.add("show");
+    }
+    function hidemodal(item1){
+        item1.classList.remove("show");
+        item1.classList.add("hide");
+    }
+    function showthank(){
+        modalmailingtitle.innerHTML =  ` `;
+        setTimeout(hidemodal(modal), 7000);
+    }
+
+    buttons.forEach((item) =>{
+        item.addEventListener(`click`,()=>{
+            showmodal(modal);
+            closemodal.addEventListener(`click`,()=>{
+                hidemodal(modal);
+            });
+            mailingbutton.addEventListener(`click`,()=>{
+                hidemodal(modalwindow);
+                showmodal(mailingmodal);
+                modalmailingtitle.innerHTML = `Идёт отправка....`;
+                setTimeout(showthank, 3000);
+            });
+        });
+    });
+
    
  
 

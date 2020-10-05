@@ -33,9 +33,10 @@
              <div class="row">
                 <div class="col-5 col-sm-6 col-md-5 col-xl-4">
                     <div class="logo_content">
-                        <div class="logo_content_title">
-                            ГГП "Иткана"
-                        </div> 
+                        <div class="logo_content_wrapper">
+                            <img src="icons/logo.png" alt="" class="logo_content_wrapper_img">
+                            <div class="logo_content_wrapper_title"> ГГП "Иткана"</div> 
+                        </div>                    
                         <div class="logo_content_subtitle">
                             горно-геологическое предприятие
                         </div> 
@@ -239,6 +240,38 @@
       </div>
  </footer>
 
+ 
+<div class="modal hide">
+    <div class="modal_window">
+        <div class="modal_window_close">
+            <span></span>
+            <span></span>
+        </div>       
+            <div class="modal_window_wrapper">
+                <span class="modal_window_title">Напишите нам: </span>
+                <p>
+                <b>Ваше имя:</b><br>
+                <input type="Укажите Ваше имя" class="modal_window_inputname">
+                </p>
+                <p>
+                <b>Сообщение:</b><br>
+                <input type="Введите Ваше сообщение" class="modal_window_inputmessage">
+                </p>
+                <p>
+                <b>Как с Вами связаться:</b><br>
+                <input type="Введите контакты" rows="5" class="modal_window_inputphone">
+                </p>
+                <button class = "modal_window_inputbutton">Отправить</button>
+            </div>          
+    </div>
+    <div class="modal_mailing hide">
+        <div class="modal_mailing_title"></div>
+    </div>
+</div>
+ 
+
+
+ 
  <script src = "js/script.js"></script>
 </body>
 </html
