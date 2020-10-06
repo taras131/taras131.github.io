@@ -135,7 +135,7 @@
                             <div class="tab_content_text_block_text">Условия работы вообщем то неплохие</div>
                             <div class="tab_content_text_block_title">Требования:</div>
                             <div class="tab_content_text_block_text">Требований много , но все они справедливые</div>
-                            <button class="tab_content_text_block_button">Откликнуться</button>
+                            <button data-modal="job" class="tab_content_text_block_button">Откликнуться</button>
                         </div>
                         
 					</div>
@@ -147,7 +147,7 @@
                             <div class="tab_content_text_block_text">Условия работы вообщем то неплохие</div>
                             <div class="tab_content_text_block_title">Требования:</div>
                             <div class="tab_content_text_block_text">Требований много , но все они справедливые</div>
-                            <button class="tab_content_text_block_button">Откликнуться</button>
+                            <button data-modal="job" class="tab_content_text_block_button">Откликнуться</button>
                         </div>
                        
 					</div>
@@ -161,7 +161,7 @@
                             </div>
                             <div class="tab_content_text_block_title">Требования:</div>
                             <div class="tab_content_text_block_text">Опыт работы более 40 лет</div>
-                            <button class="tab_content_text_block_button">Откликнуться</button>
+                            <button data-modal="job" class="tab_content_text_block_button">Откликнуться</button>
                         </div>
                         
 					</div>
@@ -218,7 +218,7 @@
                     <div class="tab_content_text_block_title">Место нахождения производственного участка:</div>
                     <div class="tab_content_text_block_text"> <br> Магаданская область, Сусуманский район, 
                         п. Солколях, месторождение «Сухое русло».</div>
-                    <button class="tab_content_text_block_button">Написать нам</button>
+                    <button data-modal="job" class="tab_content_text_block_button">Написать нам</button>
                 </div>                
             </div>
         </div>
@@ -237,35 +237,23 @@
              <li class="footer1_menu_item"><a href="#" class="footer1_menu_link">Контакты</a></li>
         </ul>
         <div class="footer1_developer">Разработчик: z-studio</div>
-      </div>
+    </div>
  </footer>
 
  
-<div class="modal hide">
-    <div class="modal_window">
-        <div class="modal_window_close">
-            <span></span>
-            <span></span>
-        </div>       
-            <div class="modal_window_wrapper">
-                <span class="modal_window_title">Напишите нам: </span>
-                <p>
-                <b>Ваше имя:</b><br>
-                <input type="Укажите Ваше имя" class="modal_window_inputname">
-                </p>
-                <p>
-                <b>Сообщение:</b><br>
-                <input type="Введите Ваше сообщение" class="modal_window_inputmessage">
-                </p>
-                <p>
-                <b>Как с Вами связаться:</b><br>
-                <input type="Введите контакты" rows="5" class="modal_window_inputphone">
-                </p>
-                <button class = "modal_window_inputbutton">Отправить</button>
-            </div>          
-    </div>
-    <div class="modal_mailing hide">
-        <div class="modal_mailing_title"></div>
+ <div class="modal">
+    <div class="modal_dialog" id="job">
+        <div class="modal_content">
+            <div class="modal_close" data-close>&times;</div>
+            <div class="modal_title">Мы свяжемся с вами.</div>
+            <form class = "modal_form" action="#">
+                <input required placeholder="Ваше имя" name="name" type="text" class="modal_input">
+                <textarea required placeholder="Ваше сообщение"  style = "resize: none;" name="message" rows="7" class="modal_input"></textarea>
+                <input required placeholder="Ваш номер телефона" name="phone" type="number" class="modal_input">
+                <input required placeholder="Ваш e-mail" name="e-mail" type="email" class="modal_input">
+                <button class="modal_button">Отправить</button>
+            </form>
+        </div>
     </div>
 </div>
  

@@ -39,7 +39,6 @@
     const hamburger = document.querySelector(".hamburger"),
     menu_item= document.querySelectorAll(`.menu_item`);
     hamburger.addEventListener(`click` ,(e)=>{
-         console.log(`hamburger click`);
          hamburger.classList.toggle(`hamburger_active`);
          menu.classList.toggle(`menu_active`);    
     });
@@ -53,42 +52,96 @@
     });
 
     //modal
-    const buttons = document.querySelectorAll("button"),
-          closemodal = document.querySelector(".modal_window_close"),
-          mailingbutton=  document.querySelector(".modal_window_inputbutton"),
-          mailingmodal = document.querySelector(".modal_mailing"),
-          modal = document.querySelector(".modal"),
-          modalwindow = document.querySelector(".modal_window"),
-          modalmailingtitle = document.querySelector(".modal_mailing_title"),
-          thank = "Ваше сообщение отправлено";
-    
-    function showmodal(item1){
-        item1.classList.remove("hide");
-        item1.classList.add("show");
-    }
-    function hidemodal(item1){
-        item1.classList.remove("show");
-        item1.classList.add("hide");
-    }
-    function showthank(){
-        modalmailingtitle.innerHTML =  ` `;
-        setTimeout(hidemodal(modal), 7000);
+    const buttonsjob = document.querySelectorAll(`[data-modal="job"]`),
+          modal = document.querySelector(`.modal`),
+          modaljob = document.querySelector(`#job`),
+          closemodal = document.querySelectorAll(`.modal_close`);
+    let i = 0;
+   
+    function showmodal(){
+        modal.classList.remove("hide");
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+        clearInterval(modaltimer);
+        i++;
     }
 
-    buttons.forEach((item) =>{
-        item.addEventListener(`click`,()=>{
-            showmodal(modal);
-            closemodal.addEventListener(`click`,()=>{
-                hidemodal(modal);
-            });
-            mailingbutton.addEventListener(`click`,()=>{
-                hidemodal(modalwindow);
-                showmodal(mailingmodal);
-                modalmailingtitle.innerHTML = `Идёт отправка....`;
-                setTimeout(showthank, 3000);
+    function hidemodal( ){
+        modal.classList.remove("show");
+        modal.classList.add("hide");
+        document.body.style.overflow = "";
+    }
+    
+    buttonsjob.forEach((item) =>{
+        item.addEventListener(`click`,showmodal);
+    });
+
+    closemodal.forEach((item)=>{
+        item.addEventListener(`click`,hidemodal);
+    });
+    
+    modal.addEventListener(`click`,(e)=>{
+        if(e.target === modal){
+            hidemodal();
+        }
+    });
+
+    document.addEventListener(`keydown`,(e)=>{
+        if(e.code === "Escape" && modal.classList.contains(`show`)) {
+            hidemodal();
+        }
+    });
+
+    const modaltimer = setTimeout(showmodal,15000);
+  
+
+    window.addEventListener(`scroll`,()=>{
+        if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight
+            && i < 1){
+            showmodal();
+        }
+    });
+
+    //Forms
+
+    const forms = document.querySelectorAll(`form`);
+    const message = {
+        loading: `Загрузка`,
+        success: `Спасибо, скоро мы с Вами свяжемся`,
+        fail: `Что то пошло не так...`
+    };
+
+    forms.forEach(item => {
+        postData(item);
+    });
+
+    function postData(form) {
+        form.addEventListener(`submit`,(e) => {
+            e.preventDefault();
+
+            let statusMessage = document.createElement(`div`);
+            statusMessage.classList.add(`status`);
+            statusMessage.textContent = message.loading;
+            form.appendChild(statusMessage);
+                      
+            const request = new XMLHttpRequest();
+            request.open(`POST`,`server.php`);
+ //           request.setRequestHeader(`Content-type`,`multipart/form-date`);
+
+            const formData = new FormData(form);
+            request.send(formData);
+
+            request.addEventListener(`load`,()=>{
+                if(request.status === 200){
+                    console.log(request.response);
+                    statusMessage.textContent = message.succes;
+                } else {
+                    statusMessage.textContent = message.fail;
+                }
             });
         });
-    });
+    }
+   
 
    
  
