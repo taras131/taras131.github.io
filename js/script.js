@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', function() {
+   
    //tab
     const tabs = document.querySelectorAll(`.tab_content`),
           menu = document.querySelector(`.menu`),
@@ -146,7 +148,7 @@
             });
         });
     }
-   
+});   
 
    
  
