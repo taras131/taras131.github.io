@@ -1,0 +1,156 @@
+@media(max-width: 1200px)
+	.subheader
+		font-size: 32px
+	    font-weight: 600
+		&_author
+			font-size: 20px
+			font-weight: 400
+	.tab
+		&_content
+			&_text		
+				.slider-wrapper
+					width: 800px
+
+@media(max-width: 991px)
+	nav
+		position: 0
+		width: 100%
+	.menu
+		padding-left: 0
+		padding-right: 0
+		justify-content: center
+		&_item
+			padding-right: 12px
+	.logo
+		&_content
+			&_wrapper
+				&_img
+					display: none
+				&_title
+					margin-left: 0
+			&_subtitle
+				font-size: 14px
+		&_email
+			font-size: 14px
+		&_phone
+			font-size: 14px
+		&_mail
+			font-size: 14px
+	.tab
+		&_content
+			&_text		
+				.slider-wrapper
+					width: 700px
+
+@media(max-width: 767px)
+	.menu
+		position: fixed
+		flex-direction: column
+		justify-content: center
+		aling-items: center
+		top: 0
+		left: -100%
+		width: 50%
+		height: 100vh
+		padding: 20px 15px
+		background-color: rgba(0,0,0,.8)
+		z-index: 3
+		transition: 0.6s all
+		&_active
+			left: 0
+		&_item
+			padding-right: 0
+			border: none
+			margin: 10px 0
+
+		&_link
+			font-size: 20px	
+			
+	.hamburger
+		display: block
+		position: absolute
+		right: 10px
+		top: 20px
+		width: 26px
+		height: 12px
+		span
+			display: block
+			height: 2px
+			width: 100%
+			background-color: #fff
+			margin-bottom: 2px
+		&_active
+			span
+				margin-bottom: -2px
+				transition: 0.5s all
+				&:nth-child(1)
+					transform: translateY(3px) rotate(-45deg)
+				&:nth-child(2)
+					display: none
+				&:nth-child(3)
+					transform: translateY(3px) rotate(45deg)
+	.xs-hidden
+		display: none
+	.xs-visible
+		display: block
+	.subheader
+		&_phone
+			display: block
+			margin-top: 10px
+			color: #fff
+			font-size: 14px
+			font-weight: 400
+			text-transform: uppercase
+		&_button
+			display: block
+			margin: 0 auto
+			margin-top: 10px
+			width: 200px
+			height: 40px
+			font-size: 12px
+	.logo
+		&_content
+			&_wrapper
+				&_title
+					font-size: 25px
+					font-weight: 500
+			&_subtitle
+				font-size: 10px
+		&_email
+			font-size: 11px
+		&_phone
+			font-size: 11px
+		&_mail
+			font-size: 11px
+	.subheader
+		font-size: 25px
+	    font-weight: 600
+		&_author
+			font-size: 15px
+			font-weight: 400
+			margin-right: 15px
+	.tab
+		&_content
+			&_text		
+				.slider-wrapper
+					width: 500px
+
+@media(max-width: 576px)
+	.logo
+		&_content
+			&_wrapper
+				&_title
+					font-size: 16px
+					font-weight: 400
+			&_subtitle
+				display: none
+		&_email
+			margin-top: 19px
+		&_mail
+			display: none
+	.tab
+		&_content
+			&_text		
+				.slider-wrapper
+					width: 420px
+

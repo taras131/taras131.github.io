@@ -1,0 +1,64 @@
+{
+  "menu": [
+    {
+      "brand": "митцубиси",
+      "model": "L 200",
+      "number": "К541УК197",
+      "old": "2008"
+    },
+    {
+      "brand": "митцубиси",
+      "model": "L 200",
+      "number": "Е758МХ777",
+      "old": "2013"
+    },
+    {
+      "brand": "тойота",
+      "model": "hilux",
+      "number": "Х189СА777",
+      "old": "2016"
+    },
+    {
+      "brand": "тойота",
+      "model": "hilux",
+      "number": "X248CA777",
+      "old": "2016"
+    },
+    {
+      "brand": "тойота",
+      "model": "LandCruiser 80",
+      "number": "В724МО125",
+      "old": "1993"
+    }
+  ],
+  "requests": [
+    {
+      "name": "erhedr",
+      "message": "erthdeh",
+      "phone": "4543626",
+      "e-mail": "tarassz@mail.ru",
+      "id": 1
+    },
+    {
+      "name": "Тарасик",
+      "message": "не хочу работать",
+      "phone": "03",
+      "e-mail": "tarassz@mail.ru",
+      "id": 2
+    },
+    {
+      "name": "ggfhgf",
+      "message": "wertheh",
+      "phone": "54364365",
+      "e-mail": "tarassz@mail.ru",
+      "id": 3
+    },
+    {
+      "name": "ggfhgf",
+      "message": "dgSGsdg",
+      "phone": "465346",
+      "e-mail": "tarassz@mail.ru",
+      "id": 4
+    }
+  ]
+}
